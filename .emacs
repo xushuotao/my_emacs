@@ -5,36 +5,94 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#ad7fa8" "#8cc4ff" "#eeeeec"])
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#ad7fa8" "#8cc4ff" "#eeeeec"])
  '(blink-cursor-mode nil)
- '(compilation-message-face (quote default))
+ '(compilation-message-face 'default)
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#657b83")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes (quote (solarized-dark)))
- '(custom-safe-themes (quote ("e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(custom-enabled-themes '(wombat))
+ '(custom-safe-themes
+   '("0ecfd25c7f4b32b4703dfbbad3c0cb865aeb17efb0b694624a604ed89550ee8d" "14f13fee1792f44c448df33e3d3a03ce9adbf1b47da8be490f604ac7ae6659b9" "9a313a6a47c9655d9f2b87e846a31e9c21076f71d85bfb22065b21d5e8da684d" "7152ab5bf548cc6215efc513442e7bb59de9eff4b5737eaed3a1a4f42789612c" "9271c0ad73ef29af016032376d36e8aed4e89eff17908c0b578c33e54dfa1da1" "6bf841f77d5eb01455d82ae436e3e25277daaef4ee855a3572589dad1b3ac4b3" "d543a5f82ce200d50bdce81b2ecc4db51422439ba7c0e6845483dd89566e4cf9" "56ed144b399e3fbf1fcfc5af854f0053b21c0e3e7cfc824f0473da6f4e179695" "5dbdb4a71a0e834318ae868143bb4329be492dd04bdf8b398fb103ba1b8c681a" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))
  '(fci-rule-color "#eee8d5")
- '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
- '(highlight-tail-colors (quote (("#eee8d5" . 0) ("#B4C342" . 20) ("#69CABF" . 30) ("#69B7F0" . 50) ("#DEB542" . 60) ("#F2804F" . 70) ("#F771AC" . 85) ("#eee8d5" . 100))))
+ '(highlight-changes-colors '("#d33682" "#6c71c4"))
+ '(highlight-symbol-colors
+   (--map
+	(solarized-color-blend it "#002b36" 0.25)
+	'("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2")))
+ '(highlight-symbol-foreground-color "#93a1a1")
+ '(highlight-tail-colors
+   '(("#eee8d5" . 0)
+	 ("#B4C342" . 20)
+	 ("#69CABF" . 30)
+	 ("#69B7F0" . 50)
+	 ("#DEB542" . 60)
+	 ("#F2804F" . 70)
+	 ("#F771AC" . 85)
+	 ("#eee8d5" . 100)))
+ '(hl-bg-colors
+   '("#7B6000" "#8B2C02" "#990A1B" "#93115C" "#3F4D91" "#00629D" "#00736F" "#546E00"))
+ '(hl-fg-colors
+   '("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36"))
+ '(hl-paren-colors '("#2aa198" "#b58900" "#268bd2" "#6c71c4" "#859900"))
  '(magit-diff-use-overlays nil)
- '(mail-host-address "xushuotao@gmail.com")
- '(menu-bar-mode nil)
+ '(mail-host-address "shuotaoxu@microsoft.com")
+ '(menu-bar-mode t)
+ '(nrepl-message-colors
+   '("#dc322f" "#cb4b16" "#b58900" "#5b7300" "#b3c34d" "#0061a8" "#2aa198" "#d33682" "#6c71c4"))
  '(nyan-mode t)
- '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("melpa" . "http://melpa.milkbox.net/packages/"))))
+ '(package-archives
+   '(("gnu" . "https://elpa.gnu.org/packages/")
+	 ("melpa" . "https://melpa.org/packages/")))
+ '(package-selected-packages
+   '(excorporate cmake-mode dockerfile-mode gnuplot gnuplot-mode solarized-theme auto-auto-indent aggressive-indent))
+ '(pos-tip-background-color "#073642")
+ '(pos-tip-foreground-color "#93a1a1")
  '(scroll-bar-mode nil)
- '(send-mail-function (quote smtpmail-send-it))
+ '(send-mail-function 'smtpmail-send-it)
  '(server-use-tcp t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(smtpmail-smtp-server "smtp.gmail.com")
  '(smtpmail-smtp-service 587)
+ '(tab-stop-list
+   '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))
+ '(term-default-bg-color "#002b36")
+ '(term-default-fg-color "#839496")
  '(tool-bar-mode nil)
- '(uniquify-buffer-name-style (quote post-forward) nil (uniquify))
- '(user-mail-address "shuotao@gmail.com")
+ '(uniquify-buffer-name-style 'post-forward nil (uniquify))
+ '(user-mail-address "xushuotao@gmail.com")
  '(vc-annotate-background nil)
- '(vc-annotate-color-map (quote ((20 . "#dc322f") (40 . "#c85d17") (60 . "#be730b") (80 . "#b58900") (100 . "#a58e00") (120 . "#9d9100") (140 . "#959300") (160 . "#8d9600") (180 . "#859900") (200 . "#669b32") (220 . "#579d4c") (240 . "#489e65") (260 . "#399f7e") (280 . "#2aa198") (300 . "#2898af") (320 . "#2793ba") (340 . "#268fc6") (360 . "#268bd2"))))
+ '(vc-annotate-background-mode nil)
+ '(vc-annotate-color-map
+   '((20 . "#dc322f")
+	 (40 . "#c85d17")
+	 (60 . "#be730b")
+	 (80 . "#b58900")
+	 (100 . "#a58e00")
+	 (120 . "#9d9100")
+	 (140 . "#959300")
+	 (160 . "#8d9600")
+	 (180 . "#859900")
+	 (200 . "#669b32")
+	 (220 . "#579d4c")
+	 (240 . "#489e65")
+	 (260 . "#399f7e")
+	 (280 . "#2aa198")
+	 (300 . "#2898af")
+	 (320 . "#2793ba")
+	 (340 . "#268fc6")
+	 (360 . "#268bd2")))
  '(vc-annotate-very-old-color nil)
- '(weechat-color-list (quote (unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496"))))
+ '(weechat-color-list
+   '(unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496"))
+ '(xterm-color-names
+   ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
+ '(xterm-color-names-bright
+   ["#fdf6e3" "#cb4b16" "#93a1a1" "#839496" "#657b83" "#6c71c4" "#586e75" "#002b36"]))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -44,17 +102,30 @@
 
 (open-dribble-file "~/dribble")
 
+;; No tabs please, only spaces (if there try: Esc-x untabify)
+(setq-default indent-tabs-mode t)
+(setq-default c-basic-offset 4)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
+
+
 ;;; VHDL mode (not required for version 21)
 (setq load-path (cons (expand-file-name "~/emacs/vhdl-mode-3.33.3") load-path))
 (autoload 'vhdl-mode "vhdl-mode" "VHDL Mode" t)
 (setq auto-mode-alist (cons '("\\.vhdl?\\'" . vhdl-mode) auto-mode-alist))
 
 ;;; Verilog mode
-;;(setq load-path (cons (expand-file-name "~/emacs/verilog-mode") load-path))
-;;(autoload 'verilog-mode "verilog-mode" "Verilog mode" t ) 
-;;(setq auto-mode-alist (cons '("\\.v[h]?\\'" . verilog-mode) auto-mode-alist)) 
-;;(setq auto-mode-alist (cons '("\\.dve\\'" . verilog-mode) auto-mode-alist)) 
-;;(setq auto-mode-alist (cons '("\\.sv\\'" . verilog-mode) auto-mode-alist)) 
+(setq load-path (cons (expand-file-name "~/emacs/verilog-mode") load-path))
+(autoload 'verilog-mode "verilog-mode" "Verilog mode" t ) 
+(setq auto-mode-alist (cons '("\\.v[h]?\\'" . verilog-mode) auto-mode-alist)) 
+(setq auto-mode-alist (cons '("\\.dve\\'" . verilog-mode) auto-mode-alist)) 
+(setq auto-mode-alist (cons '("\\.sv\\'" . verilog-mode) auto-mode-alist))
+
+;; ;;; GNUPlot mode
+;; (autoload 'gnuplot-mode "gnuplot" "Gnuplot major mode" t)
+;; (autoload 'gnuplot-make-buffer "gnuplot" "open a buffer in gnuplot-mode" t)
+;; (setq auto-mode-alist (append '(("\\.gp$" . gnuplot-mode)) auto-mode-alist))
+
 
 ;;; Vera mode
 (setq load-path (cons (expand-file-name "~/emacs/vera-mode-2.17") load-path))
@@ -114,13 +185,14 @@
 ;; commenting code
 (setq auto-mode-alist (append `(("\.h$" . c++-mode)) auto-mode-alist))
 (add-hook 'c++-mode-hook '(lambda ()
-    (setq comment-column 41)))
+                            (setq c-basic-offset 4)
+                            (setq tab-width 4)
+                            (setq indent-tabs-mode t)
+                            ;; (setq c-toggle-auto-state 1)
+                            (setq comment-column 41)))
 (setq-default fill-column 85)
 
 
-;; No tabs please, only spaces (if there try: Esc-x untabify)
-(setq-default indent-tabs-mode nil)
-;;(setq tab-width 2)
 ;; Don't scroll more than 1 line when using scroll bar
 (setq scroll-step 1)
 ;; Make searches case insensitive (nil for sensitive)
@@ -166,7 +238,47 @@
 
 (defun my-go-mode-hook () 
   ;(add-hook 'before-save-hook 'gofmt-before-save) 
-  (setq tab-width 2 indent-tabs-mode 1)) 
-(add-hook 'go-mode-hook 'my-go-mode-hook) 
+  (setq tab-width 4 indent-tabs-mode t)) 
+ (add-hook 'go-mode-hook 'my-go-mode-hook) 
 
-(require 'google-weather)
+;; (require 'google-weather)
+
+(defun remove-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
+;; (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
+;; (add-hook 'css-mode-hook #'aggressive-indent-mode)
+
+;; (global-aggressive-indent-mode 1)
+
+;; (defun my-makefile-indent-line ()
+;;   (save-excursion
+;;     (forward-line 0)
+;;     (cond
+;;      ;; keep TABs
+;;      ((looking-at "\t")
+;;       t)
+;;      ;; indent continuation lines to 4
+;;      ((and (not (bobp))
+;;            (= (char-before (1- (point))) ?\\))
+;;       (delete-horizontal-space)
+;;       (indent-to 4))
+;;      ;; delete all other leading whitespace
+;;      ((looking-at "\\s-+")
+;;       (replace-match "")))))
+
+;; (add-hook 'makefile-mode-hook
+;;           (lambda ()
+;;                 (setq-local indent-line-function 'my-makefile-indent-line)))
+(put 'downcase-region 'disabled nil)
+
+(global-set-key (kbd "C-x <up>") 'windmove-up)
+(global-set-key (kbd "C-x <down>") 'windmove-down)
+(global-set-key (kbd "C-x <right>") 'windmove-right)
+(global-set-key (kbd "C-x <left>") 'windmove-left)

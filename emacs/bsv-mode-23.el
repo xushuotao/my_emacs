@@ -84,22 +84,40 @@
 ; (global-font-lock-mode t)
 ;
 ; ;; User customization for BSV mode
-; (setq bsv-indent-level             3
-;       bsv-indent-level-module      3
-;       bsv-indent-level-declaration 3
-;       bsv-indent-level-behavioral  3
-;       bsv-indent-level-directive   1
-;       bsv-case-indent              2
-;       bsv-auto-newline             nil
-;       bsv-auto-indent-on-newline   t
-;       bsv-tab-always-indent        t
-;       bsv-auto-endcomments         t
-;       bsv-minimum-comment-distance 40
-;       bsv-indent-begin-after-if    t
-;       bsv-auto-lineup              'declarations
-;       bsv-highlight-p1800-keywords nil
-;	bsv-linter			 "my_lint_shell_command"
-;	)
+(setq bsv-indent-level             3
+      bsv-indent-level-module      3
+      bsv-indent-level-declaration 3
+      bsv-indent-level-behavioral  3
+      bsv-indent-level-directive   1
+      bsv-case-indent              2
+      bsv-auto-newline             nil
+      bsv-auto-indent-on-newline   t
+      bsv-tab-always-indent        t
+      bsv-auto-endcomments         t
+      bsv-minimum-comment-distance 40
+      bsv-indent-begin-after-if    t
+      bsv-auto-lineup              'assignment
+      bsv-highlight-p1800-keywords nil
+	bsv-linter			 "my_lint_shell_command"
+	)
+
+;; (setq bsv-indent-level             4
+;;       bsv-indent-level-module      4
+;;       bsv-indent-level-declaration 4
+;;       bsv-indent-level-behavioral  4
+;;       bsv-indent-level-directive   1
+;;       bsv-case-indent              2
+;;       bsv-auto-newline             nil
+;;       bsv-auto-indent-on-newline   t
+;;       bsv-tab-always-indent        t
+;;       bsv-auto-endcomments         t
+;;       bsv-minimum-comment-distance 40
+;;       bsv-indent-begin-after-if    t
+;;       bsv-auto-lineup              'assignment
+;;       bsv-highlight-p1800-keywords nil
+;; 	bsv-linter			 "my_lint_shell_command"
+;; 	)
+
 
 ;; 
 
@@ -3021,8 +3039,9 @@ See also `bsv-font-lock-extra-types'.")
 	   (cons (concat "\\<\\(" bsv-1800-2009-keywords "\\)\\>")
 		 'font-lock-type-face))
 	 ;; Fontify BSV-AMS keywords
-	 (cons (concat "\\<\\(" bsv-ams-keywords "\\)\\>")
-	       'bsv-font-lock-ams-face)))
+;;	 (cons (concat "\\<\\(" bsv-ams-keywords "\\)\\>")
+;;	       'bsv-font-lock-ams-face)
+	 ))
 
   (setq bsv-font-lock-keywords-1
 	(append bsv-font-lock-keywords
